@@ -174,7 +174,7 @@ func getCaller() *runtime.Frame {
 		pkg := getPackageName(f.Function)
 
 		// If the caller isn't part of this package, we're done
-		if pkg != logrusPackage {
+		if pkg != logrusPackage && pkg != "kadmin/component/log" {
 			return &f
 		}
 	}
